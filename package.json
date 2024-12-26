@@ -1,14 +1,26 @@
 {
-  "name": "my-ui-lib",
+  "name": "tostify/my-ui-lib",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:lib": "ng build ngx-ui-lib",
+    "publish:lib": "cd dist/ngx-ui-lib && npm publish --access public"
   },
   "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./toast": {
+      "types": "./dist/toast/index.d.ts",
+      "default": "./dist/toast/index.js"
+    }
+  },
   "dependencies": {
     "@angular/animations": "^18.2.0",
     "@angular/common": "^18.2.0",
@@ -23,6 +35,7 @@
     "zone.js": "~0.14.10"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^18.2.12",
     "@angular/cli": "^18.2.9",
     "@angular/compiler-cli": "^18.2.0",
     "@types/jasmine": "~5.1.0",
@@ -32,6 +45,26 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^18.2.0",
     "typescript": "~5.5.2"
-  }
+  },
+  "keywords": [
+    "angular",
+    "ui",
+    "components",
+    "toast",
+    "datatable",
+    "modal"
+  ],
+  "author": "Fatou Niang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fatou-Baamtu/ngx-ui-lib"
+  },
+  "bugs": {
+    "url": "https://github.com/Fatou-Baamtu/ngx-ui-lib/issues"
+  },
+  "homepage": "https://github.com/Fatou-Baamtu/ngx-ui-lib#readme",
+  "sideEffects": false
 }
