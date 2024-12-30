@@ -1,26 +1,16 @@
 {
-  "name": "tostify/my-ui-lib",
-  "version": "0.0.0",
+  "name": "my-ui-lib",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:lib": "ng build ngx-ui-lib",
-    "publish:lib": "cd dist/ngx-ui-lib && npm publish --access public"
+    "build:lib": "ng build Mfn-lib",
+    "publish:lib": "cd dist/Mfn-lib && npm publish --access public"
   },
-  "private": true,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "./toast": {
-      "types": "./dist/toast/index.d.ts",
-      "default": "./dist/toast/index.js"
-    }
-  },
+  "private": false,
   "dependencies": {
     "@angular/animations": "^18.2.0",
     "@angular/common": "^18.2.0",
@@ -60,11 +50,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Fatou-Baamtu/ngx-ui-lib"
+    "url": "https://github.com/Fatou-Baamtu/Mfn-lib"
   },
   "bugs": {
-    "url": "https://github.com/Fatou-Baamtu/ngx-ui-lib/issues"
+    "url": "https://github.com/Fatou-Baamtu/Mfn-lib/issues"
   },
-  "homepage": "https://github.com/Fatou-Baamtu/ngx-ui-lib#readme",
+  "homepage": "https://github.com/Fatou-Baamtu/Mfn-lib#readme",
   "sideEffects": false
 }

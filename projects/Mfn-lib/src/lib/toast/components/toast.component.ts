@@ -1,21 +1,23 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { NgClass, NgIf } from '@angular/common';
-import { ToastData } from '../interfaces/toast.interface';
+import { NgIf } from '@angular/common';
+import {ToastData} from '../interfaces/toast.interface';
+import {PositionClassesPipe} from '../../shared/pipe/position-classes.pipe';
+import {VariantClassesPipe} from '../../shared/pipe/variant-classes.pipe';
 
 @Component({
   selector: 'lib-toast',
   standalone: true,
-  imports: [NgClass, NgIf],
+  imports: [ NgIf, PositionClassesPipe, VariantClassesPipe],
   template: `
     <div *ngIf="visible" [@toastAnimation]
-         class="fixed z-50 bottom-4 right-4 flex items-center w-full max-w-xs p-4 mb-4 rounded-lg shadow"
-         [ngClass]="getVariantClass()"
+         class="fixed z-50 flex items-center p-4 rounded-lg shadow-lg max-w-sm {{ data.position | positionClasses }} {{ data.type | variantClasses:'solid' }}"
+         role="alert"
          [style.background-color]="data.backgroundColor"
          [style.color]="data.textColor">
       <div class="ms-3 text-sm font-normal">
         <div *ngIf="data.title" class="font-semibold mb-1">{{ data.title }}</div>
-        <div>{{ data.description }}</div>
+        <div>{{ data.message }}</div>
       </div>
       <button type="button"
               class="ms-auto -mx-1.5 -my-1.5 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 inline-flex items-center justify-center h-8 w-8"
@@ -60,27 +62,6 @@ export class ToastComponent implements OnInit {
       }, this.data.duration || 3000);
     }
   }
-
-  getVariantClass(): string {
-    if (this.data.backgroundColor) {
-      return '';
-    }
-
-    const baseClasses = 'text-sm';
-    switch (this.data.variant) {
-      case 'success':
-        return `${baseClasses} bg-green-100 text-green-800`;
-      case 'error':
-        return `${baseClasses} bg-red-100 text-red-800`;
-      case 'warning':
-        return `${baseClasses} bg-yellow-100 text-yellow-800`;
-      case 'info':
-        return `${baseClasses} bg-blue-100 text-blue-800`;
-      default:
-        return `${baseClasses} bg-gray-100 text-gray-800`;
-    }
-  }
-
   close() {
     this.visible = false;
   }

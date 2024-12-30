@@ -3,6 +3,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -12,13 +14,12 @@
     "skipLibCheck": true,
     "isolatedModules": true,
     "paths": {
-      "ngx-toast-lib": [
-        "./dist/ngx-toast-lib"
+      "Mfn-lib": [
+        "./dist/Mfn-lib"
       ]
     },
     "esModuleInterop": true,
     "sourceMap": true,
-    "declaration": false,
     "experimentalDecorators": true,
     "moduleResolution": "bundler",
     "importHelpers": true,

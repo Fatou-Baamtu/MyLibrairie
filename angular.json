@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-toast-lib": {
+    "Mfn-lib": {
       "projectType": "library",
-      "root": "projects/ngx-toast-lib",
-      "sourceRoot": "projects/ngx-toast-lib/src",
+      "root": "projects/Mfn-lib",
+      "sourceRoot": "projects/Mfn-lib/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ngx-toast-lib/ng-package.json"
+            "project": "projects/Mfn-lib/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-toast-lib/tsconfig.lib.prod.json"
+              "tsConfig": "projects/Mfn-lib/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ngx-toast-lib/tsconfig.lib.json"
+              "tsConfig": "projects/Mfn-lib/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,7 +27,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/ngx-toast-lib/tsconfig.spec.json",
+            "tsConfig": "projects/Mfn-lib/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
